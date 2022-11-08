@@ -46,7 +46,7 @@
                 visualizzaCampoInizio();
 
                 //richiesta in input del segno per il giocatore 1 e il giocatore 2
-                cout<<"Inserire il segno che deve utilizzare il giocatore 1 (X oppure O): ";
+                cout<<"\nInserire il segno che deve utilizzare il giocatore 1 (X oppure O): ";
                 cin>>player1;
                 
                 if(player1 == 'X')
@@ -59,7 +59,8 @@
                     cout<<"Inserire il segno X visto che il segno O è stato gia preso dal player 1: ";
                     cin>>player2;
                 }
-
+                
+                cout<<"\n";
                 cout<<"Segno player1: "<<player1<<endl;
                 cout<<"Segno player2: "<<player2<<endl;
 
