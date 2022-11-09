@@ -1,20 +1,13 @@
 #include <iostream>
 #include <ctime>
+#include <string>
+#include <cstring>
+#include <string.h>
 #define dim 9
 
 using namespace std;
 
-void visualizzaCampoInizio() //questa funzione fa visualizzare il campo solo all'inizio per far vedere come e fatto ma senza posizioni dell' array
-{
-    cout<<"  * | * | *  "<<endl;
-    cout<<" ___|___|___ "<<endl;
-    cout<<"  * | * | *  "<<endl;
-    cout<<" ___|___|___ "<<endl;				
-    cout<<"  * | * | *  "<<endl;
-    cout<<"    |   |    "<<endl;
-}
-
-void caricaArrayCampo(char campo[])
+void caricaArrayCampo(string campo[])
 {
     for(int i = 0; i < dim; i++)
     {
@@ -22,40 +15,49 @@ void caricaArrayCampo(char campo[])
     }
 }
 
-void stampaCampoGioco(char campo[])
+void stampaCAMPO(string campo[])
 {
-    for(int i = 0; i < dim; i++) 
+    cout<<" "<<campo[0]<<" | "<<campo[1]<<" | "<<campo[2]<<endl;
+    cout<<"___|___|___ "<<endl;
+    cout<<" "<<campo[3]<<" | "<<campo[4]<<" | "<<campo[5]<<endl;
+    cout<<"___|___|___ "<<endl;
+    cout<<" "<<campo[6]<<" | "<<campo[7]<<" | "<<campo[8]<<endl;
+    cout<<"   |   |    "<<endl;
+}
+
+void turnoSegno1(string campo[], int segno1)
+{
+    if(campo[segno1] == "X" or campo[segno1] == "O")
     {
-        if(i == 3 || i == 6)
-        {
-            cout<<"\n";
-        }
+        segno1 = 0;
+        cout<<"posizione gia occupata, inserire un altra posizione: ";
+        cin>>segno1;
+    }
+    else
+    {
+        campo[segno1] == "X";
+    }
+}
 
-        if(i == 3 || i == 6)
-        {
-            cout<<" ___|___|___ "<<endl;
-        }
-
-        if(i == dim)
-        {
-            cout<<"    |   |    "<<endl;     
-        }
-        
-        if(i == 2 || i == 5 || i == 8)
-        {
-            cout<<" "<<campo[i]<<" ";
-        }
-        else
-        {
-            cout<<" "<<campo[i]<<" |";
-        }  
+void turnoSegno2(string campo[], int segno2)
+{
+    if(campo[segno2] == "X" or campo[segno2] == "O")
+    {
+        segno2 = 0;
+        cout<<"posizione gia occupata, inserire un altra posizione: ";
+        cin>>segno2;
+    }
+    else
+    {
+        campo[segno2] == "O";
     }
 }
 
 int main(){ 
 
-    char campo[dim];
-    int varAvanti;
+    ///string campo[dim] = {"*", "X", "O"};
+    string campo[dim];
+    int varAvanti, segno1, segno2;
     char player1, player2;
 
     cout<<"*** GIOCO DEL TRIS ***"<<endl;
@@ -68,8 +70,9 @@ int main(){
     if(varAvanti == 0)
     {
         cout<<"\nCampo di gioco iniziale!\n"<<endl;
-
-        visualizzaCampoInizio();
+    
+        caricaArrayCampo(campo);
+        stampaCAMPO(campo);
 
         //richiesta in input del segno per il giocatore 1 e il giocatore 2
         cout<<"\n\nInserire il segno che deve utilizzare il giocatore 1 (X oppure O): ";
@@ -85,16 +88,28 @@ int main(){
             cout<<"Inserire il segno X visto che il segno O è stato gia preso dal player 1: ";
             cin>>player2;
         }
-                    
+       
         cout<<"\n";
         cout<<"Segno player1: "<<player1<<endl;
         cout<<"Segno player2: "<<player2<<endl;
-        cout<<"\n\n";   
+        cout<<"\n\n";
+        
+        stampaCAMPO(campo);
+        
+        //incizio turni gioco
+        for(int i = 1; i <= dim; i++)
+        {
+            cout<<"\nTurno "<<i<<"!\n"<<endl;
 
-        ///test
+            cout<<"\nPlayer 1, inserire la casella dove vuoi inserire il tuo segno: ";
+            cin>>segno1;
+            cout<<"Player 2, inserire la sella dove vuoi inserirer il tuo segno: ";
+            cin>>segno2;
 
-        stampaCampoGioco(campo);
-
+            turnoSegno1(campo, segno1);
+            turnoSegno2(campo, segno2);
+            stampaCAMPO(campo);
+        }        
     }
 
     return 0;
