@@ -15,6 +15,16 @@ void caricaArrayCampo(string campo[])
     }
 }
 
+/*void stampaCampoIniziale(string campo[])
+{
+    cout<<" * | * | * "<<endl;
+    cout<<"___|___|___"<<endl;
+    cout<<" * | * | * "<<endl;
+    cout<<"___|___|___"<<endl;
+    cout<<" * | * | * "<<endl;
+    cout<<"   |   |   "<<endl;
+}*/
+
 void stampaCAMPO(string campo[])
 {
     cout<<" "<<campo[0]<<" | "<<campo[1]<<" | "<<campo[2]<<endl;
@@ -27,7 +37,7 @@ void stampaCAMPO(string campo[])
 
 void turnoSegno1(string campo[], int segno1)
 {
-    if(campo[segno1] == "X" or campo[segno1] == "O")
+    if(campo[segno1 - 1] == "X" or campo[segno1 - 1] == "O")
     {
         segno1 = 0;
         cout<<"posizione gia occupata, inserire un altra posizione: ";
@@ -35,13 +45,13 @@ void turnoSegno1(string campo[], int segno1)
     }
     else
     {
-        campo[segno1] == "X";
+        campo[segno1 - 1] = "X";
     }
 }
 
 void turnoSegno2(string campo[], int segno2)
 {
-    if(campo[segno2] == "X" or campo[segno2] == "O")
+    if(campo[segno2 - 1] == "X" or campo[segno2 - 1] == "O")
     {
         segno2 = 0;
         cout<<"posizione gia occupata, inserire un altra posizione: ";
@@ -49,7 +59,39 @@ void turnoSegno2(string campo[], int segno2)
     }
     else
     {
-        campo[segno2] == "O";
+        campo[segno2 - 1] = "O";
+    }
+}
+
+void Tris(string campo[], int trisEsciDalGioco, char player1, char player2, bool TRISexit)
+{
+    if(campo[0] == "X" && campo[1] == "X" && campo[2] == "X")
+    {
+        if(player1 == 'X')
+        {
+            cout<<"\nComplimenti, il player 1 ha fatto tris!"<<endl;
+            cout<<"\nGioco terminato, grazie per aver giocato, permere 1 per uscire dal programma . . .";
+            cin>>trisEsciDalGioco;
+
+            if(trisEsciDalGioco == 1)
+            {
+                TRISexit = true;
+            }
+        }
+        else
+        {
+            if(player2 == 'O')
+            {
+                cout<<"\nComplimenti, il player 1 ha fatto tris!"<<endl;
+                cout<<"\nGioco terminato, grazie per aver giocato, permere 1 per uscire dal programma . . .";
+                cin>>trisEsciDalGioco;
+
+                if(trisEsciDalGioco == 1)
+                {
+                    TRISexit = true;
+                }
+            }
+        }
     }
 }
 
@@ -58,7 +100,9 @@ int main(){
     ///string campo[dim] = {"*", "X", "O"};
     string campo[dim];
     int varAvanti, segno1, segno2;
+    int trisEsciDalGioco = 0;
     char player1, player2;
+    bool TRISexit = false;
 
     cout<<"*** GIOCO DEL TRIS ***"<<endl;
 
@@ -94,8 +138,6 @@ int main(){
         cout<<"Segno player2: "<<player2<<endl;
         cout<<"\n\n";
         
-        stampaCAMPO(campo);
-        
         //incizio turni gioco
         for(int i = 1; i <= dim; i++)
         {
@@ -103,14 +145,45 @@ int main(){
 
             cout<<"\nPlayer 1, inserire la casella dove vuoi inserire il tuo segno: ";
             cin>>segno1;
-            cout<<"Player 2, inserire la sella dove vuoi inserirer il tuo segno: ";
-            cin>>segno2;
+            
+            if(segno1 < 0 or segno1 > 9)
+            {
+                segno1 = 0;
+                cout<<"La cella inserita è inesistente, per favore reinserire il numero della cella dove si vuole mettere il proprio segno: ";
+                cin>>segno1;
+                cout<<endl;
+            }
+            cout<<endl;
 
             turnoSegno1(campo, segno1);
+            stampaCAMPO(campo);
+
+            if(TRISexit = true)
+            {
+                return 0;
+            }
+
+            cout<<"\nPlayer 2, inserire la sella dove vuoi inserirer il tuo segno: ";
+            cin>>segno2;
+
+            if(segno2 < 0 or segno2 > 9)
+            {
+                segno2 = 0;
+                cout<<"La cella inserita è inesistente, per favore reinserire il numero della cella dovi si vuole mettere il proprio segno: ";
+                cin>>segno2;
+                cout<<endl;
+            }
+            cout<<endl;
+
             turnoSegno2(campo, segno2);
             stampaCAMPO(campo);
+
+            if(TRISexit = true)
+            {
+                return 0;
+            }
         }        
     }
 
-    return 0;
+    return 1;
 }
