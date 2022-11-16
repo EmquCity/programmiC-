@@ -1,8 +1,8 @@
 #include <iostream>
-#include <ctime>
 #include <string>
 #include <cstring>
 #include <string.h>
+#include <stdlib.h>
 #define dim 9
 
 using namespace std;
@@ -14,16 +14,6 @@ void caricaArrayCampo(string campo[])
         campo[i] = '*';
     }
 }
-
-/*void stampaCampoIniziale(string campo[])
-{
-    cout<<" * | * | * "<<endl;
-    cout<<"___|___|___"<<endl;
-    cout<<" * | * | * "<<endl;
-    cout<<"___|___|___"<<endl;
-    cout<<" * | * | * "<<endl;
-    cout<<"   |   |   "<<endl;
-}*/
 
 void stampaCAMPO(string campo[])
 {
@@ -42,6 +32,83 @@ void turnoSegno1(string campo[], int segno1)
         segno1 = 0;
         cout<<"posizione gia occupata, inserire un altra posizione: ";
         cin>>segno1;
+
+        if(campo[segno1 - 1] == "X" or campo[segno1 - 1] == "O")
+        {
+            segno1 = 0;
+            cout<<"posizione gia occupata, inserire un altra posizione: ";
+            cin>>segno1;
+            
+            if(campo[segno1 - 1] == "X" or campo[segno1 - 1] == "O")
+            {
+                segno1 = 0;
+                cout<<"posizione gia occupata, inserire un altra posizione: ";
+                cin>>segno1;
+
+                if(campo[segno1 - 1] == "X" or campo[segno1 - 1] == "O")
+                {
+                    segno1 = 0;
+                    cout<<"posizione gia occupata, inserire un altra posizione: ";
+                    cin>>segno1;
+
+                    if(campo[segno1 - 1] == "X" or campo[segno1 - 1] == "O")
+                    {
+                        segno1 = 0;
+                        cout<<"posizione gia occupata, inserire un altra posizione: ";
+                        cin>>segno1;
+
+                        if(campo[segno1 - 1] == "X" or campo[segno1 -1] == "O")
+                        {
+                            segno1 = 0;
+                            cout<<"posizione gia occupata, inserire un altra posizione: ";
+                            cin>>segno1;
+
+                            if(campo[segno1 - 1] == "X" or campo[segno1 - 1] == "O")
+                            {
+                                segno1 = 0;
+                                cout<<"posizione gia occupata, inserire un altra posizione: ";
+                                cin>>segno1;
+
+                                if(campo[segno1 - 1] == "X" or campo[segno1 - 1] == "O")
+                                {
+                                    segno1 = 0;
+                                    cout<<"posizione gia occupata, inserire un altra posizione: ";
+                                    cin>>segno1;
+                                }
+                                else
+                                {
+                                    campo[segno1 - 1] = "X";
+                                }
+                            }
+                            else
+                            {
+                                campo[segno1 - 1] = "X";
+                            }
+                        }
+                        else
+                        {
+                            campo[segno1 - 1] = "X";
+                        }
+                    }
+                    else
+                    {
+                        campo[segno1 - 1] = "X";
+                    }
+                }
+                else
+                {
+                    campo[segno1 - 1] = "X";
+                }
+            }
+            else
+            {
+                campo[segno1 - 1] = "X";
+            }
+        }
+        else
+        {
+            campo[segno1 - 1] = "X";
+        }
     }
     else
     {
@@ -56,39 +123,328 @@ void turnoSegno2(string campo[], int segno2)
         segno2 = 0;
         cout<<"posizione gia occupata, inserire un altra posizione: ";
         cin>>segno2;
-    }
-    else
-    {
-        campo[segno2 - 1] = "O";
-    }
-}
 
-void Tris(string campo[], int trisEsciDalGioco, char player1, char player2, bool TRISexit)
-{
-    if(campo[0] == "X" && campo[1] == "X" && campo[2] == "X")
-    {
-        if(player1 == 'X')
+        if(campo[segno2 - 1] == "X" or campo[segno2 - 1] == "O")
         {
-            cout<<"\nComplimenti, il player 1 ha fatto tris!"<<endl;
-            cout<<"\nGioco terminato, grazie per aver giocato, permere 1 per uscire dal programma . . .";
-            cin>>trisEsciDalGioco;
-
-            if(trisEsciDalGioco == 1)
+            segno2 = 0;
+            cout<<"posizione gia occupata, inserire un altra posizione: ";
+            cin>>segno2;
+            
+            if(campo[segno2 - 1] == "X" or campo[segno2 - 1] == "O")
             {
-                TRISexit = true;
+                segno2 = 0;
+                cout<<"posizione gia occupata, inserire un altra posizione: ";
+                cin>>segno2;
+
+                if(campo[segno2 - 1] == "X" or campo[segno2 - 1] == "O")
+                {
+                    segno2 = 0;
+                    cout<<"posizione gia occupata, inserire un altra posizione: ";
+                    cin>>segno2;
+
+                    if(campo[segno2 - 1] == "X" or campo[segno2 - 1] == "O")
+                    {
+                        segno2 = 0;
+                        cout<<"posizione gia occupata, inserire un altra posizione: ";
+                        cin>>segno2;
+
+                        if(campo[segno2 - 1] == "X" or campo[segno2 -1] == "O")
+                        {
+                            segno2 = 0;
+                            cout<<"posizione gia occupata, inserire un altra posizione: ";
+                            cin>>segno2;
+
+                            if(campo[segno2 - 1] == "X" or campo[segno2 - 1] == "O")
+                            {
+                                segno2 = 0;
+                                cout<<"posizione gia occupata, inserire un altra posizione: ";
+                                cin>>segno2;
+
+                                if(campo[segno2 - 1] == "X" or campo[segno2 - 1] == "O")
+                                {
+                                    segno2 = 0;
+                                    cout<<"posizione gia occupata, inserire un altra posizione: ";
+                                    cin>>segno2;
+                                }
+                                else
+                                {
+                                    campo[segno2 - 1] = "O";
+                                }
+                            }
+                            else
+                            {
+                                campo[segno2 - 1] = "O";
+                            }
+                        }
+                        else
+                        {
+                            campo[segno2 - 1] = "O";
+                        }
+                    }
+                    else
+                    {
+                        campo[segno2 - 1] = "O";
+                    }
+                }
+                else
+                {
+                    campo[segno2 - 1] = "O";
+                }
+            }
+            else
+            {
+                campo[segno2 - 1] = "O";
             }
         }
         else
         {
-            if(player2 == 'O')
-            {
-                cout<<"\nComplimenti, il player 1 ha fatto tris!"<<endl;
-                cout<<"\nGioco terminato, grazie per aver giocato, permere 1 per uscire dal programma . . .";
-                cin>>trisEsciDalGioco;
+            campo[segno1 - 2] = "O";
+        }
+    }
+    else
+    {
+        campo[segno1 - 2] = "O";
+    }
+}
 
-                if(trisEsciDalGioco == 1)
+void Tris(string campo[], int endCiclo, string player1, string player2)
+{  
+    endCiclo = 0;
+
+    if(campo[0] == "X" && campo[1] == "X" && campo[2] == "X")
+    {
+        cout<<"\nComplimenti, "<<player1<<" ha fatto TRIS!"<<endl;
+
+        cout<<"\nIl gioco e' terminato, inserire 1 per uscire dal gioco . . . ";
+        cin>>endCiclo;
+
+        if(endCiclo == 1)
+        {
+            abort();
+        }
+    }
+    else
+    {
+
+        if(campo[3] == "X" && campo[4] == "X" && campo[5] == "X")
+        {
+            cout<<"\nComplimenti,"<<player1<<" ha fatto TRIS!"<<endl;
+
+            cout<<"\nIl gioco e' terminato, inserire 1 per uscire dal gioco . . . ";
+            cin>>endCiclo;
+
+            if(endCiclo == 1)
+            {
+                abort();
+            }
+        }
+        else
+        {
+            if(campo[6] == "X" && campo[7] == "X" && campo[8] == "X")
+            {
+                cout<<"\nComplimenti,"<<player1<<" ha fatto TRIS!"<<endl;
+
+                cout<<"\nIl gioco e' terminato, inserire 1 per uscire dal gioco . . . ";
+                cin>>endCiclo;
+
+                if(endCiclo == 1)
                 {
-                    TRISexit = true;
+                    abort();
+                }
+            }
+            else
+            {
+                if(campo[0] == "X" && campo[3] == "X" && campo[6] == "X")
+                {
+                    cout<<"\nComplimenti,"<<player1<<" ha fatto TRIS!"<<endl;
+
+                    cout<<"\nIl gioco e' terminato, inserire 1 per uscire dal gioco . . . ";
+                    cin>>endCiclo;
+
+                    if(endCiclo == 1)
+                    {
+                        abort();
+                    }
+                }
+                else
+                {
+                    if(campo[1] == "X" && campo[4] == "X" && campo[7] == "X")
+                    {
+                        cout<<"\nComplimenti,"<<player1<<" ha fatto TRIS!"<<endl;
+
+                        cout<<"\nIl gioco e' terminato, inserire 1 per uscire dal gioco . . . ";
+                        cin>>endCiclo;
+
+                        if(endCiclo == 1)
+                        {
+                            abort();
+                        }
+                    }
+                    else
+                    {
+                        if(campo[2] == "X" && campo[5] == "X" && campo[8] == "X")
+                        {
+                            cout<<"\nComplimenti,"<<player1<<" ha fatto TRIS!"<<endl;
+
+                            cout<<"\nIl gioco e' terminato, inserire 1 per uscire dal gioco . . . ";
+                            cin>>endCiclo;
+
+                            if(endCiclo == 1)
+                            {
+                                abort();
+                            }
+                        }
+                        else
+                        {
+                            if(campo[0] == "X" && campo[4] == "X" && campo[8] == "X")
+                            {
+                                cout<<"\nComplimenti,"<<player1<<" ha fatto TRIS!"<<endl;
+
+                                cout<<"\nIl gioco e' terminato, inserire 1 per uscire dal gioco . . . ";
+                                cin>>endCiclo;
+
+                                if(endCiclo == 1)
+                                {
+                                    abort();
+                                }   
+                            }
+                            else
+                            {
+                                if(campo[2] == "X" && campo[4] == "X" && campo[6] == "X")
+                                {
+                                    cout<<"\nComplimenti,"<<player1<<" ha fatto TRIS!"<<endl;
+
+                                    cout<<"\nIl gioco e' terminato, inserire 1 per uscire dal gioco . . . ";
+                                    cin>>endCiclo;
+
+                                    if(endCiclo == 1)
+                                    {
+                                        abort();
+                                    }  
+                                }
+                                else
+                                {
+                                    if(campo[0] == "O" && campo[1] == "O" && campo[2] == "O")
+                                    {
+                                        cout<<"\nComplimenti,"<<player2<<" ha fatto TRIS!"<<endl;
+
+                                        cout<<"\nIl gioco e' terminato, inserire 1 per uscire dal gioco . . . ";
+                                        cin>>endCiclo;
+
+                                        if(endCiclo == 1)
+                                        {
+                                            abort();
+                                        }  
+                                    }
+                                    else
+                                    {
+                                        if(campo[3] == "O" && campo[4] == "O" && campo[5] == "O")
+                                        {
+                                            cout<<"\nComplimenti,"<<player2<<" ha fatto TRIS!"<<endl;
+
+                                            cout<<"\nIl gioco e' terminato, inserire 1 per uscire dal gioco . . . ";
+                                            cin>>endCiclo;
+
+                                            if(endCiclo == 1)
+                                            {
+                                                abort();
+                                            }  
+                                        }
+                                        else
+                                        {
+                                            if(campo[6] == "O" && campo[7] == "O" && campo[8] == "O")
+                                            {
+                                                cout<<"\nComplimenti,"<<player2<<" ha fatto TRIS!"<<endl;
+
+                                                cout<<"\nIl gioco e' terminato, inserire 1 per uscire dal gioco . . . ";
+                                                cin>>endCiclo;
+
+                                                if(endCiclo == 1)
+                                                {
+                                                    abort();
+                                                }  
+                                            }
+                                            else
+                                            {
+                                                if(campo[0] == "O" && campo[3] == "O" && campo[6] == "O")
+                                                {
+                                                    cout<<"\nComplimenti,"<<player2<<" ha fatto TRIS!"<<endl;
+
+                                                    cout<<"\nIl gioco e' terminato, inserire 1 per uscire dal gioco . . . ";
+                                                    cin>>endCiclo;
+
+                                                    if(endCiclo == 1)
+                                                    {
+                                                        abort();
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    if(campo[1] == "O" && campo[4] == "O" && campo[7] == "O")
+                                                    {
+                                                        cout<<"\nComplimenti,"<<player2<<" ha fatto TRIS!"<<endl;
+
+                                                        cout<<"\nIl gioco e' terminato, inserire 1 per uscire dal gioco . . . ";
+                                                        cin>>endCiclo;
+
+                                                        if(endCiclo == 1)
+                                                        {
+                                                            abort();
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        if(campo[2] == "O" && campo[5] == "O" && campo[8] == "O")
+                                                        {
+                                                            cout<<"\nComplimenti,"<<player2<<" ha fatto TRIS!"<<endl;
+
+                                                            cout<<"\nIl gioco e' terminato, inserire 1 per uscire dal gioco . . . ";
+                                                            cin>>endCiclo;
+
+                                                            if(endCiclo == 1)
+                                                            {
+                                                                abort();
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            if(campo[0] == "O" && campo[3+1] == "O" && campo[8] == "O")
+                                                            {
+                                                                cout<<"\nComplimenti,"<<player2<<" ha fatto TRIS!"<<endl;
+
+                                                                cout<<"\nIl gioco e' terminato, inserire 1 per uscire dal gioco . . . ";
+                                                                cin>>endCiclo;
+
+                                                                if(endCiclo == 1)
+                                                                {
+                                                                    abort();
+                                                                }
+                                                            }
+                                                            else
+                                                            {
+                                                                if(campo[2] == "O" && campo[3+1] == "O" && campo[8] == "O")
+                                                                {
+                                                                    cout<<"\nComplimenti,"<<player2<<" ha fatto TRIS!"<<endl;
+
+                                                                    cout<<"\nIl gioco e' terminato, inserire 1 per uscire dal gioco . . . ";
+                                                                    cin>>endCiclo;
+
+                                                                    if(endCiclo == 1)
+                                                                    {
+                                                                        abort();
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -99,10 +455,8 @@ int main(){
 
     ///string campo[dim] = {"*", "X", "O"};
     string campo[dim];
-    int varAvanti, segno1, segno2;
-    int trisEsciDalGioco = 0;
-    char player1, player2;
-    bool TRISexit = false;
+    int varAvanti, segno1, segno2, fineProgramma, endCiclo;
+    string player1, player2;
 
     cout<<"*** GIOCO DEL TRIS ***"<<endl;
 
@@ -118,32 +472,24 @@ int main(){
         caricaArrayCampo(campo);
         stampaCAMPO(campo);
 
-        //richiesta in input del segno per il giocatore 1 e il giocatore 2
-        cout<<"\n\nInserire il segno che deve utilizzare il giocatore 1 (X oppure O): ";
-        cin>>player1;
-                    
-        if(player1 == 'X')
-        {
-            cout<<"Inserire il segno O visto che il segno X è stato gia preso dal player 1: ";
-            cin>>player2;
-        }
-        else
-        {
-            cout<<"Inserire il segno X visto che il segno O è stato gia preso dal player 1: ";
-            cin>>player2;
-        }
-       
         cout<<"\n";
-        cout<<"Segno player1: "<<player1<<endl;
-        cout<<"Segno player2: "<<player2<<endl;
-        cout<<"\n\n";
-        
+        cout<<"Inserire il nome del player1: ";
+        cin>>player1;
+        cout<<"Inserire il nome del player2: ";
+        cin>>player2;        
+
+        cout<<"\n";
+        cout<<"Segno player 1: X!"<<endl;
+        cout<<"Segno player 2: O!"<<endl;
+        cout<<"\n\n";       
+
         //incizio turni gioco
+
         for(int i = 1; i <= dim; i++)
         {
             cout<<"\nTurno "<<i<<"!\n"<<endl;
 
-            cout<<"\nPlayer 1, inserire la casella dove vuoi inserire il tuo segno: ";
+            cout<<"\n"<<player1<<", inserire la casella dove vuoi inserire il tuo segno: ";
             cin>>segno1;
             
             if(segno1 < 0 or segno1 > 9)
@@ -153,17 +499,15 @@ int main(){
                 cin>>segno1;
                 cout<<endl;
             }
+
             cout<<endl;
 
             turnoSegno1(campo, segno1);
             stampaCAMPO(campo);
 
-            if(TRISexit = true)
-            {
-                return 0;
-            }
+            Tris(campo, endCiclo, player1, player2);
 
-            cout<<"\nPlayer 2, inserire la sella dove vuoi inserirer il tuo segno: ";
+            cout<<"\n"<<player2<<", inserire la sella dove vuoi inserirer il tuo segno: ";
             cin>>segno2;
 
             if(segno2 < 0 or segno2 > 9)
@@ -173,17 +517,17 @@ int main(){
                 cin>>segno2;
                 cout<<endl;
             }
+            
             cout<<endl;
 
             turnoSegno2(campo, segno2);
             stampaCAMPO(campo);
 
-            if(TRISexit = true)
-            {
-                return 0;
-            }
-        }        
+            Tris(campo, endCiclo, player1, player2);
+        }       
     }
-
-    return 1;
 }
+
+//
+// BY EMQU ;)
+//
