@@ -198,12 +198,12 @@ void turnoSegno2(string campo[], int segno2)
         }
         else
         {
-            campo[segno1 - 2] = "O";
+            campo[segno2 - 1] = "O";
         }
     }
     else
     {
-        campo[segno1 - 2] = "O";
+        campo[segno2 - 1] = "O";
     }
 }
 
