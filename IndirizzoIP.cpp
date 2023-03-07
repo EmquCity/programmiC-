@@ -57,7 +57,8 @@ void calcoloClasse(int ottetto1) {
 
 void calcoloMascheraDiRete(int barra, indirizzoIP indirizzoBinario[]) {
 
-	int ott1[8], ott2[8], ott3[8], ott4[8], dec1, dec2, dec3, dec4;
+	int ott1[8], ott2[8], ott3[8], ott4[8];
+	int dec1, dec2, dec3, dec4;
 
 	for (int i = 1; i <= barra; i++) {
 		indirizzoBinario[i].netmask = 1;
@@ -89,7 +90,7 @@ void calcoloMascheraDiRete(int barra, indirizzoIP indirizzoBinario[]) {
 
 	//conversione primo ottetto
 
-	for (i = 1; i <= 8; i++) {
+	for (int i = 1; i <= 8; i++) {
 		switch (i) {
 		case 1: if (ott1[i] == 1) {
 				dec1 = 128;
@@ -109,8 +110,40 @@ void calcoloMascheraDiRete(int barra, indirizzoIP indirizzoBinario[]) {
 				dec1 = dec1 + 0;
 			}
 			break;
+        case 4: if(ott1[i] == 1) {
+                dec1 = dec + 16;
+            }else {
+                dec1 = dec1 + 0;
+            }
+            break;
+        case 5: if(ott1[i] == 1) {
+                dec1 = dec + 8;
+            }else {
+                dec1 = dec1 + 0;
+            }
+            break;
+        case 6: if(ott1[i] == 1) {
+                dec1 = dec + 4;
+            }else {
+                dec1 = dec1 + 0;
+            }
+            break;
+        case 7: if(ott1[i] == 1) {
+                dec1 = dec + 2;
+            }else {
+                dec1 = dec1 + 0;
+            }
+            break;
+        case 8: if(ott1[i] == 1) {
+                dec1 = dec + 1;
+            }else {
+                dec1 = dec1 + 0;
+            }
+            break;
 		}
 	}
+
+    cout<<"\n\n"<<dec1<<endl;
 
 }
 
